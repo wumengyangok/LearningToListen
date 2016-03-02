@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="31dp"
+        android:src="@drawable/xv"
+        android:id="@+id/animal_easy"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="50dp"
+        android:textColor="#FF00FFD4"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_red"
+        android:text="8"
+        android:textSize="25dp"
+        android:id="@+id/button"
+        android:contextClickable="true"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/animal_easy"
+        android:layout_toLeftOf="@+id/animal_easy"
+        android:layout_toStartOf="@+id/animal_easy" />
+
+    <Button
+        android:layout_width="50dp"
+        android:textColor="#FF00FFD4"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_black"
+        android:text="8"
+        android:textSize="25dp"
+        android:id="@+id/button2"
+        android:contextClickable="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/button"
+        android:layout_toRightOf="@+id/animal_easy"
+        android:layout_toEndOf="@+id/animal_easy" />
+
+    <Button
+        android:layout_width="50dp"
+        android:textColor="#FF00FFD4"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_blue"
+        android:text="8"
+        android:textSize="25dp"
+        android:id="@+id/button3"
+        android:contextClickable="true"
+        android:layout_marginTop="58dp"
+        android:layout_below="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
+
+    <Button
+        android:layout_width="50dp"
+        android:textColor="#FF00FFD4"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_green"
+        android:text="8"
+        android:textSize="25dp"
+        android:id="@+id/button4"
+        android:contextClickable="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/button3"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="50dp"
+        android:textColor="#FF00FFD4"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_pink"
+        android:text="8"
+        android:textSize="25dp"
+        android:contextClickable="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/button3"
+        android:layout_toLeftOf="@+id/animal_easy"
+        android:layout_toStartOf="@+id/animal_easy" />
+
+    <Button
+
+        android:id="@+id/button6"
+        android:layout_width="50dp"
+        android:textColor="#FF00FFD4"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_white"
+        android:text="8"
+        android:textSize="25dp"
+        android:contextClickable="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignBottom="@+id/button5"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4" />
+
+</RelativeLayout>
