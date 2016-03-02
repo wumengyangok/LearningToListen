@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.campustory.wumengyang.vivohello.SettingsActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/setting_animals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="@string/choose_animals"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <ImageButton
+                android:id="@+id/imageButtonDog"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignLeft="@id/setting_animals"
+                android:layout_below="@+id/setting_animals"
+                android:onClick="onClickDog"
+                android:scaleType="fitXY"
+                android:src="@drawable/dog" />
+
+            <ImageButton
+                android:id="@+id/imageButtonPig"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignRight="@+id/setting_animals"
+                android:layout_below="@id/setting_animals"
+                android:onClick="onClickPig"
+                android:scaleType="fitXY"
+                android:src="@drawable/pig" />
+
+            <ImageButton
+                android:id="@+id/imageButtonCat"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignLeft="@+id/imageButtonDog"
+                android:layout_below="@id/imageButtonDog"
+                android:onClick="onClickCat"
+                android:scaleType="fitXY"
+                android:src="@drawable/cat" />
+
+            <ImageButton
+                android:id="@+id/imageButtonCow"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignRight="@+id/imageButtonPig"
+                android:layout_below="@id/imageButtonPig"
+                android:onClick="onClickCow"
+                android:scaleType="fitXY"
+                android:src="@drawable/cow" />
+
+            <ImageButton
+                android:id="@+id/imageButtonDuck"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignLeft="@+id/imageButtonCat"
+                android:layout_below="@id/imageButtonCat"
+                android:onClick="onClickDuck"
+                android:scaleType="fitXY"
+                android:src="@drawable/duck" />
+
+            <ImageButton
+                android:id="@+id/imageButtonSheep"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignRight="@+id/imageButtonCow"
+                android:layout_below="@id/imageButtonCow"
+                android:onClick="onClickSheep"
+                android:scaleType="fitXY"
+                android:src="@drawable/sheep" />
+
+            <ImageView
+                android:id="@+id/checkMarkDog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonDog"
+                android:layout_alignRight="@+id/imageButtonDog"
+                android:src="@drawable/check_mark" />
+
+            <ImageView
+                android:id="@+id/checkMarkCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonCat"
+                android:layout_alignRight="@+id/imageButtonCat"
+                android:src="@drawable/check_mark" />
+
+            <ImageView
+                android:id="@+id/checkMarkDuck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonDuck"
+                android:layout_alignRight="@+id/imageButtonDuck"
+                android:src="@drawable/check_mark" />
+
+            <ImageView
+                android:id="@+id/checkMarkPig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonPig"
+                android:layout_alignRight="@+id/imageButtonPig"
+                android:src="@drawable/check_mark" />
+
+            <ImageView
+                android:id="@+id/checkMarkCow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonCow"
+                android:layout_alignRight="@+id/imageButtonCow"
+                android:src="@drawable/check_mark" />
+
+            <ImageView
+                android:id="@+id/checkMarkSheep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonSheep"
+                android:layout_alignRight="@+id/imageButtonSheep"
+                android:src="@drawable/check_mark" />
+
+            <TextView
+                android:id="@+id/settings_speakers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/imageButtonDuck"
+                android:layout_below="@id/imageButtonDuck"
+                android:gravity="center"
+                android:text="@string/choose_speakers"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <ImageButton
+                android:id="@+id/imageButtonChild"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignLeft="@id/settings_speakers"
+                android:layout_below="@+id/settings_speakers"
+                android:onClick="onClickChild"
+                android:scaleType="fitXY"
+                android:src="@drawable/child" />
+
+            <ImageButton
+                android:id="@+id/imageButtonWoman"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/settings_speakers"
+                android:layout_toRightOf="@id/imageButtonChild"
+                android:onClick="onClickWoman"
+                android:scaleType="fitXY"
+                android:src="@drawable/woman" />
+
+            <ImageButton
+                android:id="@+id/imageButtonMan"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/settings_speakers"
+                android:layout_toRightOf="@id/imageButtonWoman"
+                android:onClick="onClickMan"
+                android:scaleType="fitXY"
+                android:src="@drawable/man" />
+
+            <ImageView
+                android:id="@+id/checkMarkChild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonChild"
+                android:layout_alignRight="@+id/imageButtonChild"
+                android:src="@drawable/check_mark" />
+
+            <ImageView
+                android:id="@+id/checkMarkWoman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonWoman"
+                android:layout_alignRight="@+id/imageButtonWoman"
+                android:src="@drawable/check_mark" />
+
+            <ImageView
+                android:id="@+id/checkMarkMan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonMan"
+                android:layout_alignRight="@+id/imageButtonMan"
+                android:src="@drawable/check_mark" />
+
+            <TextView
+                android:id="@+id/settings_difficulties"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/imageButtonChild"
+                android:layout_below="@id/imageButtonChild"
+                android:gravity="center"
+                android:text="@string/choose_difficulties"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <Spinner
+                android:id="@+id/difficulties_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/settings_difficulties"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/settings_orientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/difficulties_spinner"
+                android:layout_below="@id/difficulties_spinner"
+                android:gravity="center"
+                android:text="@string/choose_orientation"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <RadioGroup
+                android:id="@+id/orientation_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/settings_orientation">
+
+                <RadioButton
+                    android:id="@+id/radio_button_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orientation_left" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orientation_right" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_both"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orientation_both" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button_save_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/orientation_radio_group"
+                android:layout_centerHorizontal="true"
+                android:onClick="onClickSave"
+                android:text="@string/saving" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

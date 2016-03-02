@@ -23,7 +23,8 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void onClickSetting(View view) {
-
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 
 }
