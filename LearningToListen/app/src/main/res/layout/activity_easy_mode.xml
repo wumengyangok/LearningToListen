@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/animal_easy"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="31dp"
+        android:src="@drawable/dog_medium_mode" />
+
+    <Button
+        android:id="@+id/button_red_easy"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/animal_easy"
+        android:layout_marginTop="51dp"
+        android:layout_toLeftOf="@+id/animal_easy"
+        android:layout_toStartOf="@+id/animal_easy"
+        android:background="@drawable/button_red"
+        android:contextClickable="true"
+        android:text="8"
+        android:textColor="#FF00FFD4"
+        android:textSize="25dp"
+        android:onClick="onClickIcon" />
+
+    <Button
+        android:id="@+id/button_black_easy"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button_red_easy"
+        android:layout_gravity="center_horizontal"
+        android:layout_toEndOf="@+id/animal_easy"
+        android:layout_toRightOf="@+id/animal_easy"
+        android:background="@drawable/button_black"
+        android:contextClickable="true"
+        android:text="8"
+        android:textColor="#FF00FFD4"
+        android:textSize="25dp"
+        android:onClick="onClickIcon" />
+
+    <Button
+        android:id="@+id/button_blue_easy"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_red_easy"
+        android:layout_alignStart="@+id/button_red_easy"
+        android:layout_below="@+id/button_red_easy"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/button_blue"
+        android:contextClickable="true"
+        android:text="8"
+        android:textColor="#FF00FFD4"
+        android:textSize="25dp"
+        android:onClick="onClickIcon" />
+
+    <Button
+        android:id="@+id/button_green_easy"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_black_easy"
+        android:layout_alignStart="@+id/button_black_easy"
+        android:layout_alignTop="@+id/button_blue_easy"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_green"
+        android:contextClickable="true"
+        android:text="8"
+        android:textColor="#FF00FFD4"
+        android:textSize="25dp"
+        android:onClick="onClickIcon" />
+
+    <Button
+        android:id="@+id/button_pink_easy"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_blue_easy"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="57dp"
+        android:layout_toLeftOf="@+id/animal_easy"
+        android:layout_toStartOf="@+id/animal_easy"
+        android:background="@drawable/button_pink"
+        android:contextClickable="true"
+        android:text="8"
+        android:textColor="#FF00FFD4"
+        android:textSize="25dp"
+        android:onClick="onClickIcon" />
+
+    <Button
+
+        android:id="@+id/button_white_easy"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button_pink_easy"
+        android:layout_alignLeft="@+id/button_green_easy"
+        android:layout_alignStart="@+id/button_green_easy"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_white"
+        android:contextClickable="true"
+        android:text="8"
+        android:textColor="#FF00FFD4"
+        android:textSize="25dp"
+        android:onClick="onClickIcon" />
+
+</RelativeLayout>
