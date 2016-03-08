@@ -36,7 +36,7 @@ public class Setting implements Serializable {
     private String userName;
 
     Setting () {
-        this.numberOfTrials = 8;
+        this.numberOfTrials = 10;
         this.mode = Mode.EASY;
         this.voiceFrom = VoiceFrom.BOTH;
         this.userName = "Bouncy";

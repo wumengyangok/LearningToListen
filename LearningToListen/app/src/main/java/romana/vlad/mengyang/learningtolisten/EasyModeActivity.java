@@ -1,5 +1,6 @@
 package romana.vlad.mengyang.learningtolisten;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,8 +18,8 @@ public class EasyModeActivity extends AppCompatActivity {
     private String fileName;
     private Setting.VoiceFrom playMode;
     private int volume;
-    private final int delay = 3;
-    private final float difference = 0.2f;
+    private final int delay = 10;
+    private final float difference = 0.3f;
 
     private void setAudioFile(String fileName, Setting.VoiceFrom playMode, int volume) {
         this.volume = volume;
@@ -88,6 +89,8 @@ public class EasyModeActivity extends AppCompatActivity {
             "pig", "dog", "cat", "duck", "cow", "sheep"
     };
 
+    private Grade grade;
+
     public static int getResId(String resName, Class<?> c) {
         try {
             Field idField = c.getDeclaredField(resName);
@@ -128,7 +131,7 @@ public class EasyModeActivity extends AppCompatActivity {
         StringBuilder fileName = new StringBuilder();
         fileName.append(animalArrayList.get(animal)).append('_').append(colorArray[color]).append('_').append(numberArrayList.get(number));
         Log.e("LAG", fileName.toString());
-        setAudioFile(fileName.toString(), Setting.VoiceFrom.BOTH, 60);
+        setAudioFile(fileName.toString(), setting.getVoiceFrom(), 60);
         play();
 
         String animalMask = randomAvoid(animalArray, animalArrayList.get(animal).name());
@@ -151,7 +154,11 @@ public class EasyModeActivity extends AppCompatActivity {
     }
 
     public void exit() {
-
+        Intent intent = new Intent(this, GraphResultActivity.class);
+        intent.putExtra("Result", grade);
+        intent.putExtra("Setting", setting);
+        startActivity(intent);
+        finish();
     }
     // initialisation
     @Override
@@ -167,6 +174,7 @@ public class EasyModeActivity extends AppCompatActivity {
         numberAnimal = animalArrayList.size();
         numberSpeaker = speakerArrayList.size();
         numberInteger = numberArrayList.size();
+        grade = new Grade(playMode, Setting.Mode.EASY);
         run();
     }
 
@@ -176,9 +184,13 @@ public class EasyModeActivity extends AppCompatActivity {
         String iconName = view.getResources().getResourceName(view.getId());
         if (iconName.contains(correctAnswer)) {
             Toast.makeText(EasyModeActivity.this, "Right", Toast.LENGTH_SHORT).show();
+            grade.addGrade(difficulty, true);
             difficulty += 20;
+            if (difficulty > 100)
+                difficulty = 100;
         } else {
             Toast.makeText(EasyModeActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
+            grade.addGrade(difficulty, false);
             if (difficulty > 0) {
                 difficulty -= 20;
             }
