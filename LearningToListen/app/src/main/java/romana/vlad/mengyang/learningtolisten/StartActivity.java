@@ -1,5 +1,7 @@
 package romana.vlad.mengyang.learningtolisten;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
@@ -53,6 +55,7 @@ public class StartActivity extends AppCompatActivity {
 
     public void onClickSetting(View view) {
         Intent intent = new Intent(this, SettingsActivity.class);
+        intent.putExtra("Setting", setting);
         startActivityForResult(intent, REQUEST_CODE);
     }
 
@@ -68,4 +71,22 @@ public class StartActivity extends AppCompatActivity {
         Log.e("LAG", setting.getEmailAddress().toString());
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Exit the game?")
+                .setCancelable(true)
+                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("NO, stay in the game", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 }

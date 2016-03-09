@@ -197,7 +197,7 @@ public class EasyModeActivity extends AppCompatActivity {
         }
         countDown--;
         if (countDown == 0) {
-            Toast.makeText(EasyModeActivity.this, "Finished", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(EasyModeActivity.this, "Finished", Toast.LENGTH_SHORT).show();
             exit();
         } else {
             run();

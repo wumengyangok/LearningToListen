@@ -212,7 +212,7 @@ public class HardModeActivity extends AppCompatActivity {
         }
         countDown--;
         if (countDown == 0) {
-            Toast.makeText(HardModeActivity.this, "Finished", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(HardModeActivity.this, "Finished", Toast.LENGTH_SHORT).show();
             exit();
         } else {
             run();

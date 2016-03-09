@@ -93,7 +93,7 @@
                 android:src="@drawable/sheep" />
 
             <ImageView
-                android:id="@+id/checkMarkDog"
+                android:id="@+id/checkMarkdog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonDog"
@@ -102,7 +102,7 @@
                 android:src="@drawable/check_mark" />
 
             <ImageView
-                android:id="@+id/checkMarkCat"
+                android:id="@+id/checkMarkcat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonCat"
@@ -111,7 +111,7 @@
                 android:src="@drawable/check_mark" />
 
             <ImageView
-                android:id="@+id/checkMarkDuck"
+                android:id="@+id/checkMarkduck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonDuck"
@@ -120,7 +120,7 @@
                 android:src="@drawable/check_mark" />
 
             <ImageView
-                android:id="@+id/checkMarkPig"
+                android:id="@+id/checkMarkpig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonPig"
@@ -129,7 +129,7 @@
                 android:src="@drawable/check_mark" />
 
             <ImageView
-                android:id="@+id/checkMarkCow"
+                android:id="@+id/checkMarkcow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonCow"
@@ -138,7 +138,7 @@
                 android:src="@drawable/check_mark" />
 
             <ImageView
-                android:id="@+id/checkMarkSheep"
+                android:id="@+id/checkMarksheep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonSheep"
@@ -253,19 +253,19 @@
                 android:layout_below="@id/settings_orientation">
 
                 <RadioButton
-                    android:id="@+id/radio_button_left"
+                    android:id="@+id/radio_button_LEFT"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/orientation_left" />
 
                 <RadioButton
-                    android:id="@+id/radio_button_right"
+                    android:id="@+id/radio_button_RIGHT"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/orientation_right" />
 
                 <RadioButton
-                    android:id="@+id/radio_button_both"
+                    android:id="@+id/radio_button_BOTH"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/orientation_both" />

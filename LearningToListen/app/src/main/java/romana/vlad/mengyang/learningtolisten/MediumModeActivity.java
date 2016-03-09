@@ -137,17 +137,16 @@ public class MediumModeActivity extends AppCompatActivity {
 
         String animalMask = randomAvoid(animalArray, animalArrayList.get(animal).name());
         String colorMask = randomAvoid(colorArray, colorArray[color]);
+        int numberMask = randomAvoid(numberInteger, number);
         StringBuilder maskName = new StringBuilder();
-        maskName.append(animalMask).append('_').append(colorMask).append('_').append(numberArrayList.get(number));
+        maskName.append(animalMask).append('_').append(colorMask).append('_').append(numberArrayList.get(numberMask));
         Log.e("LAG", maskName.toString());
         setAudioFile(maskName.toString(), Setting.VoiceFrom.BOTH, difficulty);
         play();
-        correctAnswer = new String(colorArray[color]);
+        correctAnswer = new String(colorArray[color] + "_" + numberArrayList.get(number));
 
-        ImageView face = (ImageView) findViewById(R.id.animal_easy);
+        ImageView face = (ImageView) findViewById(R.id.animal_medium);
         face.setImageResource(getResId(animalArrayList.get(animal).toString(), R.drawable.class));
-
-
     }
 
     public void pause() {
@@ -199,11 +198,12 @@ public class MediumModeActivity extends AppCompatActivity {
         }
         countDown--;
         if (countDown == 0) {
-            Toast.makeText(MediumModeActivity.this, "Finished", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MediumModeActivity.this, "Finished", Toast.LENGTH_SHORT).show();
             exit();
         } else {
             run();
         }
         Log.e("LAG", iconName);
     }
+
 }
