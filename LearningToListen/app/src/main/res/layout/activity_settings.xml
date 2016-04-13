@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.campustory.wumengyang.vivohello.SettingsActivity">
+    tools:context="com.campustory.wumengyang.vivohello.SettingsActivity"
+    android:background="@color/colorBackground">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -40,6 +41,7 @@
                 android:layout_below="@+id/setting_animals"
                 android:onClick="onClickDog"
                 android:scaleType="fitXY"
+                android:background="@null"
                 android:src="@drawable/dog" />
 
             <ImageButton
@@ -50,6 +52,7 @@
                 android:layout_below="@id/setting_animals"
                 android:onClick="onClickPig"
                 android:scaleType="fitXY"
+                android:background="@null"
                 android:src="@drawable/pig" />
 
             <ImageButton
@@ -60,6 +63,7 @@
                 android:layout_below="@id/imageButtonDog"
                 android:onClick="onClickCat"
                 android:scaleType="fitXY"
+                android:background="@null"
                 android:src="@drawable/cat" />
 
             <ImageButton
@@ -69,6 +73,7 @@
                 android:layout_alignRight="@+id/imageButtonPig"
                 android:layout_below="@id/imageButtonPig"
                 android:onClick="onClickCow"
+                android:background="@null"
                 android:scaleType="fitXY"
                 android:src="@drawable/cow" />
 
@@ -79,6 +84,7 @@
                 android:layout_alignLeft="@+id/imageButtonCat"
                 android:layout_below="@id/imageButtonCat"
                 android:onClick="onClickDuck"
+                android:background="@null"
                 android:scaleType="fitXY"
                 android:src="@drawable/duck" />
 
@@ -88,6 +94,7 @@
                 android:layout_height="150dp"
                 android:layout_alignRight="@+id/imageButtonCow"
                 android:layout_below="@id/imageButtonCow"
+                android:background="@null"
                 android:onClick="onClickSheep"
                 android:scaleType="fitXY"
                 android:src="@drawable/sheep" />
@@ -164,6 +171,7 @@
                 android:layout_height="100dp"
                 android:layout_alignLeft="@id/settings_speakers"
                 android:layout_below="@+id/settings_speakers"
+                android:background="@null"
                 android:onClick="onClickChild"
                 android:scaleType="fitXY"
                 android:src="@drawable/child" />
@@ -173,6 +181,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/settings_speakers"
+                android:background="@null"
                 android:layout_toRightOf="@id/imageButtonChild"
                 android:onClick="onClickWoman"
                 android:scaleType="fitXY"
@@ -183,6 +192,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/settings_speakers"
+                android:background="@null"
                 android:layout_toRightOf="@id/imageButtonWoman"
                 android:onClick="onClickMan"
                 android:scaleType="fitXY"

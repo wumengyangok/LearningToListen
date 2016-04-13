@@ -1,11 +1,17 @@
 package romana.vlad.mengyang.learningtolisten;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.util.JsonWriter;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,6 +24,16 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 public class GraphResultActivity extends AppCompatActivity {
@@ -69,6 +85,80 @@ public class GraphResultActivity extends AppCompatActivity {
         chart.invalidate();
 
     }
+
+//    private class MyTask extends AsyncTask<String, String, String> {
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//            Log.e("LAG", "Background Thread");
+//        }
+//
+//        @Override
+//        protected String doInBackground(String... params) {
+//            connectServer();
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(String s) {
+//            Log.e("LAG", "Background Thread ended");
+//            super.onPostExecute(s);
+//        }
+//    }
+//
+//    protected boolean isOnline() {
+//        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+//        if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+//
+//    protected void connectServer() {
+//        if (isOnline()) {
+//            Log.e("LAG", "Online");
+//            setData();
+//        } else {
+//            Log.e("LAG", "Offline");
+//        }
+//    }
+//
+//    private void setData() {
+//        URL url;
+//        HttpURLConnection httpURLConnection;
+//        try {
+//            url = new URL("http://52.35.91.41:8000/scorepost");
+//            httpURLConnection = (HttpURLConnection) url.openConnection();
+//            //Log.e("LAG", "OK");
+//            httpURLConnection.setDoOutput(true);
+//            Log.e("LAG", "OK");
+//            httpURLConnection.setRequestMethod("POST");
+//            //httpURLConnection.setChunkedStreamingMode(0);
+//            Log.e("LAG", "OK");
+//            String data = URLEncoder.encode("user_name", "UTF-8")
+//                    + "=" + URLEncoder.encode(setting.getUserName(), "UTF-8");
+//            Log.e("LAG", "OK");
+//            OutputStreamWriter writer= new OutputStreamWriter(httpURLConnection.getOutputStream());
+//            Log.e("LAG", "OK");
+//            writer.write(data);
+//            writer.flush();
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+//            StringBuilder sb = new StringBuilder();
+//            String line = null;
+//            // Read Server Response
+//            while((line = reader.readLine()) != null)
+//            {
+//                // Append server response in string
+//                sb.append(line + "\n");
+//            }
+//            Log.e("LAG", sb.toString());
+//            httpURLConnection.disconnect();
+//        } catch (Exception e) {
+//            Log.e("LAG", e.toString());
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
