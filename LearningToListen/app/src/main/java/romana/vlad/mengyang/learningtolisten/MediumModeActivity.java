@@ -7,14 +7,14 @@ import android.widget.ImageView;
 
 
 public class MediumModeActivity extends AppCompatActivity {
-    private Game mediumMode;
+    private EasyGame mediumMode;
 
     // initialisation
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medium_mode);
-        mediumMode = new Game(
+        mediumMode = new EasyGame(
                 this,
                 (Setting) getIntent().getSerializableExtra("Setting"),
                 (ImageView) findViewById(R.id.animal_medium)
@@ -26,7 +26,9 @@ public class MediumModeActivity extends AppCompatActivity {
 
     // Handle the click
     public void onClickMedium(View view) {
-        String iconName = view.getResources().getResourceName(view.getId());
-        mediumMode.decide(iconName);
+        if (mediumMode.audioFileMask.isFinished() && mediumMode.audioFileTarget.isFinished()) {
+            String iconName = view.getResources().getResourceName(view.getId());
+            mediumMode.decide(iconName);
+        }
     }
 }

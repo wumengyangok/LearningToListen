@@ -16,7 +16,7 @@
         android:src="@drawable/dog_medium_mode" />
 
     <Button
-        android:id="@+id/button_red_easy"
+        android:id="@+id/red_8e"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/animal_easy"
@@ -31,10 +31,10 @@
         android:onClick="onClickEasy" />
 
     <Button
-        android:id="@+id/button_black_easy"
+        android:id="@+id/black_8e"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button_red_easy"
+        android:layout_alignTop="@+id/red_8e"
         android:layout_gravity="center_horizontal"
         android:layout_toEndOf="@+id/animal_easy"
         android:layout_toRightOf="@+id/animal_easy"
@@ -46,12 +46,12 @@
         android:onClick="onClickEasy" />
 
     <Button
-        android:id="@+id/button_blue_easy"
+        android:id="@+id/blue_8e"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button_red_easy"
-        android:layout_alignStart="@+id/button_red_easy"
-        android:layout_below="@+id/button_red_easy"
+        android:layout_alignLeft="@+id/red_8e"
+        android:layout_alignStart="@+id/red_8e"
+        android:layout_below="@+id/red_8e"
         android:layout_marginTop="58dp"
         android:background="@drawable/button_blue"
         android:contextClickable="true"
@@ -61,12 +61,12 @@
         android:onClick="onClickEasy" />
 
     <Button
-        android:id="@+id/button_green_easy"
+        android:id="@+id/green_8e"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button_black_easy"
-        android:layout_alignStart="@+id/button_black_easy"
-        android:layout_alignTop="@+id/button_blue_easy"
+        android:layout_alignLeft="@+id/black_8e"
+        android:layout_alignStart="@+id/black_8e"
+        android:layout_alignTop="@+id/blue_8e"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_green"
         android:contextClickable="true"
@@ -76,10 +76,10 @@
         android:onClick="onClickEasy" />
 
     <Button
-        android:id="@+id/button_pink_easy"
+        android:id="@+id/pink_8e"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button_blue_easy"
+        android:layout_below="@+id/blue_8e"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="57dp"
         android:layout_toLeftOf="@+id/animal_easy"
@@ -93,12 +93,12 @@
 
     <Button
 
-        android:id="@+id/button_white_easy"
+        android:id="@+id/white_8e"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button_pink_easy"
-        android:layout_alignLeft="@+id/button_green_easy"
-        android:layout_alignStart="@+id/button_green_easy"
+        android:layout_alignBottom="@+id/pink_8e"
+        android:layout_alignLeft="@+id/green_8e"
+        android:layout_alignStart="@+id/green_8e"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_white"
         android:contextClickable="true"

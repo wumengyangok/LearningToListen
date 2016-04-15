@@ -17,31 +17,32 @@ import java.util.Random;
 
 //Controller
 
-public class Game {
+public abstract class Game {
 
     protected final int numberColor = 6;
     protected ImageView imageView;
     protected Context context;
     protected Setting setting;
-    //Count the trials
-    protected int countDown;
+    protected Grade grade;
     protected ArrayList<Setting.Animal> animalArrayList;
     protected ArrayList<Setting.Speaker> speakerArrayList;
     protected ArrayList<Integer> numberArrayList;
+    protected String[] colorArray = {
+            "black", "red", "blue", "pink", "green", "white"
+    };
+    protected String[] animalArray = {
+            "pig", "dog", "cat", "duck", "cow", "sheep"
+    };
+
+    //Count the trials
+    protected int countDown;
     protected int difficulty;
     protected int numberAnimal;
     protected int numberSpeaker;
     protected int numberInteger;
     protected String correctAnswer;
-    protected String[] colorArray = {
-            "black", "red", "blue", "pink", "green", "white"
-    };
-
-    protected String[] animalArray = {
-            "pig", "dog", "cat", "duck", "cow", "sheep"
-    };
-
-    protected Grade grade;
+    protected AudioFile audioFileTarget;
+    protected AudioFile audioFileMask;
 
     public Game(Context context, Setting setting, ImageView imageView) {
         this.context = context;
@@ -106,24 +107,29 @@ public class Game {
         numberInteger++;
     }
 
-    // run a trial
-    public void run() {
-        int animal = randomAvoid(numberAnimal, -1);
-        int color = randomAvoid(numberColor, -1);
-        int number = randomAvoid(numberInteger, -1);
+    protected void playTarget(int animal, int color, int number) {
         StringBuilder fileName = new StringBuilder();
         fileName.append(animalArrayList.get(animal)).append('_').append(colorArray[color]).append('_').append(numberArrayList.get(number));
         Log.e("LAG", fileName.toString());
-        new AudioFile(context, fileName.toString(), setting.getVoiceFrom(), 60).play();
+        audioFileTarget = new AudioFile(context, fileName.toString(), setting.getVoiceFrom(), 60);
+        audioFileTarget.play();
+    }
 
+    protected void playMask(int animal, int color, int number) {
         String animalMask = randomAvoid(animalArray, animalArrayList.get(animal).name());
         String colorMask = randomAvoid(colorArray, colorArray[color]);
         StringBuilder maskName = new StringBuilder();
         maskName.append(animalMask).append('_').append(colorMask).append('_').append(numberArrayList.get(number));
         Log.e("LAG", maskName.toString());
-        new AudioFile(context, maskName.toString(), Setting.VoiceFrom.BOTH, difficulty).play();
+        audioFileMask = new AudioFile(context, maskName.toString(), Setting.VoiceFrom.BOTH, difficulty);
+        audioFileMask.play();
         correctAnswer = new String(colorArray[color] + "_" + numberArrayList.get(number));
         imageView.setImageResource(getResId(animalArrayList.get(animal).toString(), R.drawable.class));
+    }
+
+    // run a trial
+    public void run() {
+
     }
 
     public void pause() {

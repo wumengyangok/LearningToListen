@@ -15,6 +15,9 @@ public class AudioFile {
     private int volume;
     private final int delay = 10;
     private final float difference = 0.3f;
+    private MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayerLeft;
+    private MediaPlayer mediaPlayerRight;
 
     public AudioFile(Context context, String fileName, Setting.VoiceFrom playMode, int volume) {
         this.context = context;
@@ -33,13 +36,22 @@ public class AudioFile {
         }
     }
 
+    public boolean isFinished() {
+        boolean flag = !(mediaPlayer.isPlaying() || mediaPlayerLeft.isPlaying() || mediaPlayerRight.isPlaying());
+        if (flag) {
+            mediaPlayer.release();
+            mediaPlayerLeft.release();
+            mediaPlayerRight.release();
+        }
+        return flag;
+    }
     // Play audio file with playMode
     public void play() {
 
         int fileUri = getResId(fileName, R.raw.class);
-        MediaPlayer mediaPlayerLeft = MediaPlayer.create(context, fileUri);
-        MediaPlayer mediaPlayerRight = MediaPlayer.create(context, fileUri);
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, fileUri);
+        mediaPlayerLeft = MediaPlayer.create(context, fileUri);
+        mediaPlayerRight = MediaPlayer.create(context, fileUri);
+        mediaPlayer = MediaPlayer.create(context, fileUri);
         switch (playMode) {
             case LEFT:
                 mediaPlayerLeft.setVolume(volume / 100.0f, 0.0f);

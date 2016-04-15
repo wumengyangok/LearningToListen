@@ -4,17 +4,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class EasyModeActivity extends AppCompatActivity {
 
-    private Game easyMode;
+    private EasyGame easyMode;
 
     // initialisation
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easy_mode);
-        easyMode = new Game(
+        easyMode = new EasyGame(
                 this,
                 (Setting) getIntent().getSerializableExtra("Setting"),
                 (ImageView) findViewById(R.id.animal_easy)
@@ -25,7 +26,9 @@ public class EasyModeActivity extends AppCompatActivity {
 
     // Handle the click
     public void onClickEasy(View view) {
-        String iconName = view.getResources().getResourceName(view.getId());
-        easyMode.decide(iconName);
+        if (easyMode.audioFileMask.isFinished() && easyMode.audioFileTarget.isFinished()) {
+            String iconName = view.getResources().getResourceName(view.getId());
+            easyMode.decide(iconName);
+        }
     }
 }
