@@ -79,12 +79,13 @@ public class HardGame extends Game{
     @Override
     public void run() {
         Random random = new Random();
-        int animal = randomAvoid(numberAnimal, -1);
+        animal = randomAvoid(numberAnimal, -1);
         int randomOne = random.nextInt(size);
         int color = preparedColorN.get(randomOne);
         int number = preparedIntegerN.get(randomOne);
-        playTarget(animal, color, number);
-        playMask(animal, color, number);
+        int speaker = randomAvoid(numberSpeaker, -1);
+        playTarget(animal, color, number, speaker);
+        playMask(animal, color, number, speaker);
     }
 
 }

@@ -5,8 +5,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -14,6 +17,8 @@ import android.widget.Spinner;
 import java.lang.reflect.Field;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    private Setting newSetting;
 
     public static int getResId(String resName, Class<?> c) {
         try {
@@ -24,8 +29,6 @@ public class SettingsActivity extends AppCompatActivity {
             return -1;
         }
     }
-
-    private Setting newSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +55,27 @@ public class SettingsActivity extends AppCompatActivity {
             imageView.setVisibility(View.VISIBLE);
         }
 
-        RadioGroup orientationRadioGroup = (RadioGroup) findViewById(R.id.orientation_radio_group);
-        String checkedName = new String("radio_button_" + newSetting.getVoiceFrom());
-        orientationRadioGroup.check(getResId(checkedName, R.id.class));
+        switch (newSetting.getVoiceFrom()) {
+            case BOTH:
+                imageView = (ImageView) findViewById(getResId("checkMarkBoth", R.id.class));
+                imageView.setVisibility(View.VISIBLE);
+                break;
+            case LEFT:
+                imageView = (ImageView) findViewById(getResId("checkMarkLeft", R.id.class));
+                imageView.setVisibility(View.VISIBLE);
+                break;
+            case RIGHT:
+                imageView = (ImageView) findViewById(getResId("checkMarkRight", R.id.class));
+                imageView.setVisibility(View.VISIBLE);
+                break;
+            default:break;
+        }
+
+        EditText emailAddress = (EditText) findViewById(R.id.edit_email_settings);
+        emailAddress.setText(newSetting.getEmailAddress());
+
+        CheckBox checkBox = (CheckBox) findViewById(R.id.setting_is_agree);
+        checkBox.setChecked(newSetting.getAgreement());
     }
 
     public void onClickDog(View view) {
@@ -160,31 +181,44 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
+    public void onClickOrientation(View view) {
+        ImageView checkMarkLeft = (ImageView) findViewById(R.id.checkMarkLeft);
+        ImageView checkMarkRight = (ImageView) findViewById(R.id.checkMarkRight);
+        ImageView checkMarkBoth = (ImageView) findViewById(R.id.checkMarkBoth);
+        String iconName = view.getResources().getResourceName(view.getId());
+        if (iconName.contains("Left")) {
+            checkMarkLeft.setVisibility(View.VISIBLE);
+            checkMarkRight.setVisibility(View.INVISIBLE);
+            checkMarkBoth.setVisibility(View.INVISIBLE);
+            newSetting.setVoiceFrom(Setting.VoiceFrom.LEFT);
+        } else if (iconName.contains("Right")) {
+            checkMarkLeft.setVisibility(View.INVISIBLE);
+            checkMarkRight.setVisibility(View.VISIBLE);
+            checkMarkBoth.setVisibility(View.INVISIBLE);
+            newSetting.setVoiceFrom(Setting.VoiceFrom.RIGHT);
+        } else {
+            checkMarkLeft.setVisibility(View.INVISIBLE);
+            checkMarkRight.setVisibility(View.INVISIBLE);
+            checkMarkBoth.setVisibility(View.VISIBLE);
+            newSetting.setVoiceFrom(Setting.VoiceFrom.BOTH);
+        }
+    }
+
     private void save() {
         Spinner modeSpinner = (Spinner) findViewById(R.id.difficulties_spinner);
         newSetting.setMode(Setting.Mode.valueOf((String) modeSpinner.getSelectedItem()));
-        RadioGroup orientationRadioGroup = (RadioGroup) findViewById(R.id.orientation_radio_group);
-        switch (orientationRadioGroup.getCheckedRadioButtonId()) {
-            case R.id.radio_button_BOTH:
-                newSetting.setVoiceFrom(Setting.VoiceFrom.BOTH);
-                break;
-            case R.id.radio_button_LEFT:
-                newSetting.setVoiceFrom(Setting.VoiceFrom.LEFT);
-                break;
-            case R.id.radio_button_RIGHT:
-                newSetting.setVoiceFrom(Setting.VoiceFrom.RIGHT);
-                break;
-            default:
-                break;
-        }
+        EditText emailAddress = (EditText) findViewById(R.id.edit_email_settings);
+        Editable email = emailAddress.getText();
+        newSetting.setEmailAddress(email.toString());
+        CheckBox checkBox = (CheckBox) findViewById(R.id.setting_is_agree);
+        if (checkBox.isChecked())
+            newSetting.setAgreement(true);
+        else newSetting.setAgreement(false);
+
         Intent resultIntent = new Intent();
         resultIntent.putExtra("Setting", newSetting);
         setResult(RESULT_OK, resultIntent);
         finish();
-    }
-
-    public void onClickSave(View view) {
-        save();
     }
 
     @Override
@@ -197,14 +231,9 @@ public class SettingsActivity extends AppCompatActivity {
                         save();
                     }
                 })
-                .setNegativeButton("NO, leave settings", new DialogInterface.OnClickListener() {
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
-                    }
-                })
-                .setNeutralButton("Stay to edit", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
                     }
                 });
         AlertDialog alert = builder.create();

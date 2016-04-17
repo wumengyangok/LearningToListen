@@ -3,21 +3,16 @@ package romana.vlad.mengyang.learningtolisten;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Parcelable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import java.text.Normalizer;
-
 public class StartActivity extends AppCompatActivity {
 
-    private Setting setting;
-
-    private String testString;
-
     private final int REQUEST_CODE = 0;
+    private Setting setting;
+    private String testString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +64,7 @@ public class StartActivity extends AppCompatActivity {
         Log.e("LAG", setting.getMode().toString());
         Log.e("LAG", setting.getVoiceFrom().toString());
         Log.e("LAG", setting.getEmailAddress().toString());
+        Log.e("LAG", Boolean.toString(setting.getAgreement()));
     }
 
     @Override
@@ -81,7 +77,7 @@ public class StartActivity extends AppCompatActivity {
                         finish();
                     }
                 })
-                .setNegativeButton("NO, stay in the game", new DialogInterface.OnClickListener() {
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                     }

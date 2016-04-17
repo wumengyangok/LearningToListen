@@ -13,11 +13,12 @@ public class EasyGame extends Game {
     }
     @Override
     public void run() {
-        int animal = randomAvoid(numberAnimal, -1);
+        animal = randomAvoid(numberAnimal, -1);
         int color = randomAvoid(numberColor, -1);
         int number = randomAvoid(numberInteger, -1);
-        playTarget(animal, color, number);
-        playMask(animal, color, number);
+        int speaker = randomAvoid(numberSpeaker, -1);
+        playTarget(animal, color, number, speaker);
+        playMask(animal, color, number, speaker);
     }
 
 }

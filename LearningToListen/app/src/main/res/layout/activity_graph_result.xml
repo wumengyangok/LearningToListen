@@ -10,64 +10,64 @@
     tools:context="romana.vlad.mengyang.learningtolisten.GraphResultActivity">
 
     <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/linechart_grade"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/linechart_grade" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/linechart_grade"
-        android:id="@+id/title_send_email"
-        android:text="@string/send_email"
-        android:textSize="18dp"
-        android:textIsSelectable="false"
-        android:textStyle="bold|italic"
-        android:gravity="center" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editEmail"
-        android:layout_below="@+id/title_send_email"
         android:layout_centerHorizontal="true" />
 
     <TextView
+        android:id="@+id/title_send_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linechart_grade"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/editEmail"
-        android:id="@+id/send_email"
-        android:text="@string/guide_send_email"
-        android:textSize="18dp"
+        android:gravity="center"
+        android:text="@string/send_email"
         android:textIsSelectable="false"
-        android:textStyle="bold|italic"
-        android:gravity="center" />
+        android:textSize="18dp"
+        android:textStyle="bold|italic" />
 
-    <Button
+    <EditText
+        android:id="@+id/editEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_ok"
+        android:layout_below="@+id/title_send_email"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/send_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editEmail"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/guide_send_email"
+        android:textIsSelectable="false"
+        android:textSize="18dp"
+        android:textStyle="bold|italic" />
+
+    <Button
         android:id="@+id/button_ok"
-        android:background="@drawable/rounded_button"
-        android:layout_below="@+id/send_email"
-        android:layout_alignLeft="@+id/editEmail"
-        android:onClick="onClickOK"
-        android:layout_alignStart="@+id/editEmail" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_cancel"
-        android:id="@+id/button_cancel"
-        android:background="@drawable/rounded_button"
+        android:layout_alignLeft="@+id/editEmail"
+        android:layout_alignStart="@+id/editEmail"
         android:layout_below="@+id/send_email"
+        android:background="@drawable/rounded_button"
+        android:onClick="onClickOK"
+        android:text="@string/button_ok" />
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editEmail"
         android:layout_alignRight="@+id/editEmail"
+        android:layout_below="@+id/send_email"
+        android:background="@drawable/rounded_button"
         android:onClick="onClickCancel"
-        android:layout_alignEnd="@+id/editEmail" />
+        android:text="@string/button_cancel" />
 
 </RelativeLayout>

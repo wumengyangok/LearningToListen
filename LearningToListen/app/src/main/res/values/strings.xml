@@ -13,6 +13,8 @@
     <string name="orientation_left">on the left</string>
     <string name="orientation_right">on the right</string>
     <string name="orientation_both">face to face</string>
+    <string name="setting_email_address">\nSet your email address here for receiving results\n</string>
+    <string name="agreement_share_data">\nDo you agree to share your results with researchers at UCL?\n</string>
     <string name="saving">SAVE</string>
     <string name="send_email">Would you like to have a copy of your results?</string>
     <string name="guide_send_email">Edit your email address and press OK to send</string>

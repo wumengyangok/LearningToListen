@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.campustory.wumengyang.vivohello.SettingsActivity"
-    android:background="@color/colorBackground">
+    tools:context="com.campustory.wumengyang.vivohello.SettingsActivity">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -39,9 +39,9 @@
                 android:layout_height="150dp"
                 android:layout_alignLeft="@id/setting_animals"
                 android:layout_below="@+id/setting_animals"
+                android:background="@null"
                 android:onClick="onClickDog"
                 android:scaleType="fitXY"
-                android:background="@null"
                 android:src="@drawable/dog" />
 
             <ImageButton
@@ -50,9 +50,9 @@
                 android:layout_height="150dp"
                 android:layout_alignRight="@+id/setting_animals"
                 android:layout_below="@id/setting_animals"
+                android:background="@null"
                 android:onClick="onClickPig"
                 android:scaleType="fitXY"
-                android:background="@null"
                 android:src="@drawable/pig" />
 
             <ImageButton
@@ -61,9 +61,9 @@
                 android:layout_height="150dp"
                 android:layout_alignLeft="@+id/imageButtonDog"
                 android:layout_below="@id/imageButtonDog"
+                android:background="@null"
                 android:onClick="onClickCat"
                 android:scaleType="fitXY"
-                android:background="@null"
                 android:src="@drawable/cat" />
 
             <ImageButton
@@ -72,8 +72,8 @@
                 android:layout_height="150dp"
                 android:layout_alignRight="@+id/imageButtonPig"
                 android:layout_below="@id/imageButtonPig"
-                android:onClick="onClickCow"
                 android:background="@null"
+                android:onClick="onClickCow"
                 android:scaleType="fitXY"
                 android:src="@drawable/cow" />
 
@@ -83,8 +83,8 @@
                 android:layout_height="150dp"
                 android:layout_alignLeft="@+id/imageButtonCat"
                 android:layout_below="@id/imageButtonCat"
-                android:onClick="onClickDuck"
                 android:background="@null"
+                android:onClick="onClickDuck"
                 android:scaleType="fitXY"
                 android:src="@drawable/duck" />
 
@@ -105,8 +105,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonDog"
                 android:layout_alignRight="@+id/imageButtonDog"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <ImageView
                 android:id="@+id/checkMarkcat"
@@ -114,8 +114,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonCat"
                 android:layout_alignRight="@+id/imageButtonCat"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <ImageView
                 android:id="@+id/checkMarkduck"
@@ -123,8 +123,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonDuck"
                 android:layout_alignRight="@+id/imageButtonDuck"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <ImageView
                 android:id="@+id/checkMarkpig"
@@ -132,8 +132,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonPig"
                 android:layout_alignRight="@+id/imageButtonPig"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <ImageView
                 android:id="@+id/checkMarkcow"
@@ -141,8 +141,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonCow"
                 android:layout_alignRight="@+id/imageButtonCow"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <ImageView
                 android:id="@+id/checkMarksheep"
@@ -150,8 +150,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonSheep"
                 android:layout_alignRight="@+id/imageButtonSheep"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/settings_speakers"
@@ -181,8 +181,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/settings_speakers"
-                android:background="@null"
                 android:layout_toRightOf="@id/imageButtonChild"
+                android:background="@null"
                 android:onClick="onClickWoman"
                 android:scaleType="fitXY"
                 android:src="@drawable/woman" />
@@ -192,8 +192,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/settings_speakers"
-                android:background="@null"
                 android:layout_toRightOf="@id/imageButtonWoman"
+                android:background="@null"
                 android:onClick="onClickMan"
                 android:scaleType="fitXY"
                 android:src="@drawable/man" />
@@ -204,8 +204,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonChild"
                 android:layout_alignRight="@+id/imageButtonChild"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <ImageView
                 android:id="@+id/checkMarkWoman"
@@ -213,8 +213,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonWoman"
                 android:layout_alignRight="@+id/imageButtonWoman"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <ImageView
                 android:id="@+id/checkMarkMan"
@@ -222,15 +222,87 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonMan"
                 android:layout_alignRight="@+id/imageButtonMan"
-                android:visibility="invisible"
-                android:src="@drawable/check_mark" />
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/settings_orientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/imageButtonChild"
+                android:layout_below="@id/imageButtonChild"
+                android:gravity="center"
+                android:text="@string/choose_orientation"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <ImageButton
+                android:id="@+id/imageButtonLeft"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignLeft="@id/settings_orientation"
+                android:layout_below="@+id/settings_orientation"
+                android:background="@null"
+                android:onClick="onClickOrientation"
+                android:scaleType="fitXY"
+                android:src="@drawable/left" />
+
+            <ImageButton
+                android:id="@+id/imageButtonBoth"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/settings_orientation"
+                android:layout_toRightOf="@id/imageButtonLeft"
+                android:background="@null"
+                android:onClick="onClickOrientation"
+                android:scaleType="fitXY"
+                android:src="@drawable/both" />
+
+            <ImageButton
+                android:id="@+id/imageButtonRight"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/settings_orientation"
+                android:layout_toRightOf="@id/imageButtonBoth"
+                android:background="@null"
+                android:onClick="onClickOrientation"
+                android:scaleType="fitXY"
+                android:src="@drawable/right" />
+
+            <ImageView
+                android:id="@+id/checkMarkLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonLeft"
+                android:layout_alignRight="@+id/imageButtonLeft"
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/checkMarkRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonRight"
+                android:layout_alignRight="@+id/imageButtonRight"
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/checkMarkBoth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageButtonBoth"
+                android:layout_alignRight="@+id/imageButtonBoth"
+                android:src="@drawable/check_mark"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/settings_difficulties"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/imageButtonChild"
-                android:layout_below="@id/imageButtonChild"
+                android:layout_alignLeft="@id/imageButtonLeft"
+                android:layout_below="@id/imageButtonLeft"
                 android:gravity="center"
                 android:text="@string/choose_difficulties"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -245,50 +317,44 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/settings_orientation"
+                android:id="@+id/settings_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@id/difficulties_spinner"
                 android:layout_below="@id/difficulties_spinner"
                 android:gravity="center"
-                android:text="@string/choose_orientation"
+                android:text="@string/setting_email_address"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="20dp"
                 android:textStyle="bold|italic" />
 
-            <RadioGroup
-                android:id="@+id/orientation_radio_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/settings_orientation">
-
-                <RadioButton
-                    android:id="@+id/radio_button_LEFT"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/orientation_left" />
-
-                <RadioButton
-                    android:id="@+id/radio_button_RIGHT"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/orientation_right" />
-
-                <RadioButton
-                    android:id="@+id/radio_button_BOTH"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/orientation_both" />
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/button_save_setting"
+            <EditText
+                android:id="@+id/edit_email_settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/orientation_radio_group"
+                android:layout_below="@+id/settings_email"
                 android:layout_centerHorizontal="true"
-                android:onClick="onClickSave"
-                android:text="@string/saving" />
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/share_data_agreement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_email_settings"
+                android:gravity="center"
+                android:text="@string/agreement_share_data"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <CheckBox
+                android:id="@+id/setting_is_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/share_data_agreement"
+                android:layout_below="@id/share_data_agreement"
+                android:text="Agree" />
 
         </RelativeLayout>
     </ScrollView>

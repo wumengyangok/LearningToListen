@@ -3,6 +3,7 @@ package romana.vlad.mengyang.learningtolisten;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -33,6 +34,9 @@ public abstract class Game {
     protected String[] animalArray = {
             "pig", "dog", "cat", "duck", "cow", "sheep"
     };
+    protected String[] speakerArray = {
+            "man", "woman", "child"
+    };
 
     //Count the trials
     protected int countDown;
@@ -43,6 +47,7 @@ public abstract class Game {
     protected String correctAnswer;
     protected AudioFile audioFileTarget;
     protected AudioFile audioFileMask;
+    protected int animal;
 
     public Game(Context context, Setting setting, ImageView imageView) {
         this.context = context;
@@ -107,24 +112,25 @@ public abstract class Game {
         numberInteger++;
     }
 
-    protected void playTarget(int animal, int color, int number) {
+    protected void playTarget(int animal, int color, int number, int speaker) {
         StringBuilder fileName = new StringBuilder();
-        fileName.append(animalArrayList.get(animal)).append('_').append(colorArray[color]).append('_').append(numberArrayList.get(number));
+        fileName.append(animalArrayList.get(animal)).append('_').append(colorArray[color]).append('_').append(numberArrayList.get(number)).append("_").append(speakerArrayList.get(speaker).name().toLowerCase());
         Log.e("LAG", fileName.toString());
         audioFileTarget = new AudioFile(context, fileName.toString(), setting.getVoiceFrom(), 60);
         audioFileTarget.play();
     }
 
-    protected void playMask(int animal, int color, int number) {
+    protected void playMask(int animal, int color, int number, int speaker) {
         String animalMask = randomAvoid(animalArray, animalArrayList.get(animal).name());
         String colorMask = randomAvoid(colorArray, colorArray[color]);
+        String speakerMask = randomAvoid(speakerArray, speakerArrayList.get(speaker).name().toLowerCase());
         StringBuilder maskName = new StringBuilder();
-        maskName.append(animalMask).append('_').append(colorMask).append('_').append(numberArrayList.get(number));
+        maskName.append(animalMask).append('_').append(colorMask).append('_').append(numberArrayList.get(number)).append("_").append(speakerMask);
         Log.e("LAG", maskName.toString());
         audioFileMask = new AudioFile(context, maskName.toString(), Setting.VoiceFrom.BOTH, difficulty);
         audioFileMask.play();
         correctAnswer = new String(colorArray[color] + "_" + numberArrayList.get(number));
-        imageView.setImageResource(getResId(animalArrayList.get(animal).toString(), R.drawable.class));
+        delay();
     }
 
     // run a trial
@@ -136,6 +142,16 @@ public abstract class Game {
 
     }
 
+    public void delay() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                imageView.setImageResource(getResId(animalArrayList.get(animal).toString(), R.drawable.class));
+            }
+        }, 500);
+    }
+
     public void decide(String iconName) {
         if (iconName.contains(correctAnswer)) {
             Toast.makeText(context, "Right", Toast.LENGTH_SHORT).show();
@@ -143,16 +159,19 @@ public abstract class Game {
             difficulty += 20;
             if (difficulty > 100)
                 difficulty = 100;
+            Log.e("LAG", animalArrayList.get(animal).toString() + "_happy");
+            imageView.setImageResource(getResId(animalArrayList.get(animal).toString() + "_happy", R.drawable.class));
         } else {
             Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
             grade.addGrade(difficulty, false);
             if (difficulty > 0) {
                 difficulty -= 20;
             }
+            Log.e("LAG", animalArrayList.get(animal).toString() + "_sad");
+            imageView.setImageResource(getResId(animalArrayList.get(animal).toString() + "_sad", R.drawable.class));
         }
         countDown--;
         if (countDown == 0) {
-            //Toast.makeText(EasyModeActivity.this, "Finished", Toast.LENGTH_SHORT).show();
             exit();
         } else {
             run();
