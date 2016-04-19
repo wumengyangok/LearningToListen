@@ -3,9 +3,6 @@ package romana.vlad.mengyang.learningtolisten;
 import android.content.Context;
 import android.widget.ImageView;
 
-/**
- * Created by wumengyang on 14/04/16.
- */
 public class EasyGame extends Game {
 
     public EasyGame(Context context, Setting setting, ImageView imageView) {
@@ -17,6 +14,7 @@ public class EasyGame extends Game {
         int color = randomAvoid(numberColor, -1);
         int number = randomAvoid(numberInteger, -1);
         int speaker = randomAvoid(numberSpeaker, -1);
+        calculateFromSNR();
         playTarget(animal, color, number, speaker);
         playMask(animal, color, number, speaker);
     }

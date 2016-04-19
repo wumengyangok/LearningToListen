@@ -5,21 +5,18 @@ import android.media.MediaPlayer;
 
 import java.lang.reflect.Field;
 
-/**
- * Created by wumengyang on 13/04/16.
- */
 public class AudioFile {
     private Context context;
     private String fileName;
     private Setting.VoiceFrom playMode;
-    private int volume;
+    private float volume;
     private final int delay = 10;
     private final float difference = 0.3f;
     private MediaPlayer mediaPlayer;
     private MediaPlayer mediaPlayerLeft;
     private MediaPlayer mediaPlayerRight;
 
-    public AudioFile(Context context, String fileName, Setting.VoiceFrom playMode, int volume) {
+    public AudioFile(Context context, String fileName, Setting.VoiceFrom playMode, float volume) {
         this.context = context;
         this.volume = volume;
         this.fileName = fileName;
@@ -54,21 +51,21 @@ public class AudioFile {
         mediaPlayer = MediaPlayer.create(context, fileUri);
         switch (playMode) {
             case LEFT:
-                mediaPlayerLeft.setVolume(volume / 100.0f, 0.0f);
-                mediaPlayerRight.setVolume(0.0f, volume / 100.0f - difference);
+                mediaPlayerLeft.setVolume(volume, 0.0f);
+                mediaPlayerRight.setVolume(0.0f, volume - difference);
                 mediaPlayerLeft.seekTo(delay);
                 mediaPlayerLeft.start();
                 mediaPlayerRight.start();
                 break;
             case RIGHT:
-                mediaPlayerRight.setVolume(0.0f, volume / 100.0f);
-                mediaPlayerLeft.setVolume(volume / 100.0f - difference, 0.0f);
+                mediaPlayerRight.setVolume(0.0f, volume);
+                mediaPlayerLeft.setVolume(volume - difference, 0.0f);
                 mediaPlayerRight.seekTo(delay);
                 mediaPlayerRight.start();
                 mediaPlayerLeft.start();
                 break;
             case BOTH:
-                mediaPlayer.setVolume(volume / 100.0f, volume / 100.0f);
+                mediaPlayer.setVolume(volume, volume);
                 mediaPlayer.start();
                 break;
             default:

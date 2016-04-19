@@ -12,10 +12,6 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by wumengyang on 13/04/16.
- */
-
 //Controller
 
 public abstract class Game {
@@ -38,6 +34,10 @@ public abstract class Game {
             "man", "woman", "child"
     };
 
+    protected int[] SNR = {
+            40, 20, 10, 6, 3, 0, -3, -6, -10, -20, -40
+    };
+
     //Count the trials
     protected int countDown;
     protected int difficulty;
@@ -48,6 +48,8 @@ public abstract class Game {
     protected AudioFile audioFileTarget;
     protected AudioFile audioFileMask;
     protected int animal;
+    protected float targetVolume;
+    protected float maskVolume;
 
     public Game(Context context, Setting setting, ImageView imageView) {
         this.context = context;
@@ -61,6 +63,7 @@ public abstract class Game {
         numberInteger = numberArrayList.size();
         grade = new Grade(setting.getVoiceFrom(), setting.getMode());
         this.imageView = imageView;
+        difficulty = 0;
     }
 
     public static int getResId(String resName, Class<?> c) {
@@ -112,11 +115,18 @@ public abstract class Game {
         numberInteger++;
     }
 
+    protected void calculateFromSNR() {
+        float snr = SNR[difficulty];
+        float k = (float) Math.pow(10, snr / 20.0);
+        targetVolume = (float) (k / Math.sqrt(k * k + 1));
+        maskVolume = (float) Math.sqrt(1 - targetVolume * targetVolume);
+    }
+
     protected void playTarget(int animal, int color, int number, int speaker) {
         StringBuilder fileName = new StringBuilder();
         fileName.append(animalArrayList.get(animal)).append('_').append(colorArray[color]).append('_').append(numberArrayList.get(number)).append("_").append(speakerArrayList.get(speaker).name().toLowerCase());
         Log.e("LAG", fileName.toString());
-        audioFileTarget = new AudioFile(context, fileName.toString(), setting.getVoiceFrom(), 60);
+        audioFileTarget = new AudioFile(context, fileName.toString(), setting.getVoiceFrom(), targetVolume);
         audioFileTarget.play();
     }
 
@@ -127,7 +137,7 @@ public abstract class Game {
         StringBuilder maskName = new StringBuilder();
         maskName.append(animalMask).append('_').append(colorMask).append('_').append(numberArrayList.get(number)).append("_").append(speakerMask);
         Log.e("LAG", maskName.toString());
-        audioFileMask = new AudioFile(context, maskName.toString(), Setting.VoiceFrom.BOTH, difficulty);
+        audioFileMask = new AudioFile(context, maskName.toString(), Setting.VoiceFrom.BOTH, maskVolume);
         audioFileMask.play();
         correctAnswer = new String(colorArray[color] + "_" + numberArrayList.get(number));
         delay();
@@ -155,17 +165,17 @@ public abstract class Game {
     public void decide(String iconName) {
         if (iconName.contains(correctAnswer)) {
             Toast.makeText(context, "Right", Toast.LENGTH_SHORT).show();
-            grade.addGrade(difficulty, true);
-            difficulty += 20;
-            if (difficulty > 100)
-                difficulty = 100;
+            grade.addGrade(SNR[difficulty], true);
+            difficulty += 1;
+            if (difficulty > 10)
+                difficulty = 10;
             Log.e("LAG", animalArrayList.get(animal).toString() + "_happy");
             imageView.setImageResource(getResId(animalArrayList.get(animal).toString() + "_happy", R.drawable.class));
         } else {
             Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
-            grade.addGrade(difficulty, false);
+            grade.addGrade(SNR[difficulty], false);
             if (difficulty > 0) {
-                difficulty -= 20;
+                difficulty -= 1;
             }
             Log.e("LAG", animalArrayList.get(animal).toString() + "_sad");
             imageView.setImageResource(getResId(animalArrayList.get(animal).toString() + "_sad", R.drawable.class));

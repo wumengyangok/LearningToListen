@@ -10,9 +10,6 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.Set;
 
-/**
- * Created by wumengyang on 14/04/16.
- */
 public class HardGame extends Game{
 
     private HashMap<String, String> prepared;
@@ -84,6 +81,7 @@ public class HardGame extends Game{
         int color = preparedColorN.get(randomOne);
         int number = preparedIntegerN.get(randomOne);
         int speaker = randomAvoid(numberSpeaker, -1);
+        calculateFromSNR();
         playTarget(animal, color, number, speaker);
         playMask(animal, color, number, speaker);
     }

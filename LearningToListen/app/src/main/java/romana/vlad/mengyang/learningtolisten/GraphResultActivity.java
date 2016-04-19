@@ -35,6 +35,10 @@ public class GraphResultActivity extends AppCompatActivity {
 
     private Setting setting;
 
+    private int[] SNR = {
+            40, 20, 10, 6, 3, 0, -3, -6, -10, -20, -40
+    };
+
     private void setChart() {
         LineChart chart = (LineChart) findViewById(R.id.linechart_grade);
 
@@ -48,7 +52,7 @@ public class GraphResultActivity extends AppCompatActivity {
         YAxis yAxis = chart.getAxisLeft();
         chart.getAxisRight().setEnabled(false);
         yAxis.setAxisMinValue(-40f);
-        yAxis.setAxisMaxValue(70f);
+        yAxis.setAxisMaxValue(40f);
         yAxis.setDrawLabels(true);
         yAxis.setDrawAxisLine(true);
         yAxis.setDrawGridLines(false);
@@ -58,7 +62,7 @@ public class GraphResultActivity extends AppCompatActivity {
         grade.display();
         ArrayList<Integer> gradeInDifficulty = grade.getDifficultyArrayList();
         for (int i = 0; i < gradeInDifficulty.size(); i++) {
-            Entry entry = new Entry(60 - gradeInDifficulty.get(i), i);
+            Entry entry = new Entry(gradeInDifficulty.get(i), i);
             yValues.add(entry);
         }
 

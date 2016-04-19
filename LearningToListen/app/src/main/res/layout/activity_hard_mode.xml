@@ -22,8 +22,8 @@
 
     <Button
         android:id="@+id/hard_0"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/hard_1"
         android:layout_toLeftOf="@+id/hard_1"
         android:layout_toStartOf="@+id/hard_1"
@@ -34,8 +34,8 @@
 
     <Button
         android:id="@+id/hard_1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/animal_hard"
         android:layout_toLeftOf="@+id/animal_hard"
         android:layout_toStartOf="@+id/animal_hard"
@@ -58,8 +58,8 @@
 
     <Button
         android:id="@+id/hard_3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/animal_hard"
         android:layout_toLeftOf="@+id/animal_hard"
         android:layout_toRightOf="@+id/hard_1"
@@ -71,8 +71,8 @@
 
     <Button
         android:id="@+id/hard_4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/hard_2"
         android:layout_toLeftOf="@+id/animal_hard"
         android:layout_toStartOf="@+id/animal_hard"
@@ -83,8 +83,8 @@
 
     <Button
         android:id="@+id/hard_5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/hard_3"
         android:layout_toLeftOf="@+id/hard_4"
         android:layout_toStartOf="@+id/hard_4"
@@ -95,8 +95,8 @@
 
     <Button
         android:id="@+id/hard_6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/hard_1"
         android:layout_toEndOf="@+id/hard_7"
         android:layout_toRightOf="@+id/hard_7"
@@ -107,8 +107,8 @@
 
     <Button
         android:id="@+id/hard_7"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignLeft="@+id/hard_9"
         android:layout_alignStart="@+id/hard_9"
         android:layout_below="@+id/hard_8"
@@ -119,8 +119,8 @@
 
     <Button
         android:id="@+id/hard_8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/hard_1"
         android:layout_toEndOf="@+id/hard_7"
         android:layout_toRightOf="@+id/hard_7"
@@ -131,8 +131,8 @@
 
     <Button
         android:id="@+id/hard_9"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/animal_hard"
         android:layout_toEndOf="@+id/animal_hard"
         android:layout_toRightOf="@+id/animal_hard"
@@ -143,8 +143,8 @@
 
     <Button
         android:id="@+id/hard_10"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/hard_8"
         android:layout_toEndOf="@+id/animal_hard"
         android:layout_toRightOf="@+id/animal_hard"
@@ -155,8 +155,8 @@
 
     <Button
         android:id="@+id/hard_11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/hard_10"
         android:layout_toEndOf="@+id/hard_10"
         android:layout_toRightOf="@+id/hard_10"
