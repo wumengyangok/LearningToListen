@@ -27,6 +27,7 @@ public class MediumModeActivity extends AppCompatActivity {
     // Handle the click
     public void onClickMedium(View view) {
         if (mediumMode.audioFileMask.isFinished() && mediumMode.audioFileTarget.isFinished()) {
+            mediumMode.setNullAudioFile();
             String iconName = view.getResources().getResourceName(view.getId());
             mediumMode.decide(iconName);
         }

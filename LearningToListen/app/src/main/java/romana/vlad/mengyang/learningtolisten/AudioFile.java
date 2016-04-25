@@ -6,12 +6,12 @@ import android.media.MediaPlayer;
 import java.lang.reflect.Field;
 
 public class AudioFile {
+    private final int delay = 10;
+    private final float difference = 0.3f;
     private Context context;
     private String fileName;
     private Setting.VoiceFrom playMode;
     private float volume;
-    private final int delay = 10;
-    private final float difference = 0.3f;
     private MediaPlayer mediaPlayer;
     private MediaPlayer mediaPlayerLeft;
     private MediaPlayer mediaPlayerRight;
@@ -34,14 +34,19 @@ public class AudioFile {
     }
 
     public boolean isFinished() {
-        boolean flag = !(mediaPlayer.isPlaying() || mediaPlayerLeft.isPlaying() || mediaPlayerRight.isPlaying());
-        if (flag) {
-            mediaPlayer.release();
-            mediaPlayerLeft.release();
-            mediaPlayerRight.release();
+        try {
+            boolean flag = !(mediaPlayer.isPlaying() || mediaPlayerLeft.isPlaying() || mediaPlayerRight.isPlaying());
+            if (flag) {
+                mediaPlayer.release();
+                mediaPlayerLeft.release();
+                mediaPlayerRight.release();
+            }
+            return flag;
+        } catch (Exception e) {
+            return false;
         }
-        return flag;
     }
+
     // Play audio file with playMode
     public void play() {
 

@@ -15,7 +15,7 @@ public class Setting implements Serializable {
     private boolean isAgree;
 
     Setting () {
-        this.numberOfTrials = 10;
+        this.numberOfTrials = 15;
         this.mode = Mode.EASY;
         this.voiceFrom = VoiceFrom.BOTH;
         this.userName = "Bouncy";

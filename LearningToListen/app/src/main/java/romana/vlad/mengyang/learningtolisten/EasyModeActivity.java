@@ -26,6 +26,7 @@ public class EasyModeActivity extends AppCompatActivity {
     // Handle the click
     public void onClickEasy(View view) {
         if (easyMode.audioFileMask.isFinished() && easyMode.audioFileTarget.isFinished()) {
+            easyMode.setNullAudioFile();
             String iconName = view.getResources().getResourceName(view.getId());
             easyMode.decide(iconName);
         }

@@ -22,8 +22,8 @@
 
     <Button
         android:id="@+id/red_8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/blue_8"
         android:layout_toLeftOf="@+id/blue_8"
         android:layout_toStartOf="@+id/blue_8"
@@ -31,13 +31,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="8"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/blue_8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/animal_medium"
         android:layout_toLeftOf="@+id/animal_medium"
         android:layout_toStartOf="@+id/animal_medium"
@@ -45,13 +45,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="8"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/black_8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignBottom="@+id/animal_medium"
         android:layout_alignLeft="@+id/red_8"
         android:layout_alignStart="@+id/red_8"
@@ -59,13 +59,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="8"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/white_8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/animal_medium"
         android:layout_toLeftOf="@+id/animal_medium"
         android:layout_toRightOf="@+id/blue_8"
@@ -74,13 +74,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="8"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/pink_8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/black_8"
         android:layout_toLeftOf="@+id/animal_medium"
         android:layout_toStartOf="@+id/animal_medium"
@@ -88,13 +88,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="8"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/green_8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/white_8"
         android:layout_toLeftOf="@+id/pink_8"
         android:layout_toStartOf="@+id/pink_8"
@@ -102,13 +102,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="8"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/red_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/blue_8"
         android:layout_toEndOf="@+id/blue_2"
         android:layout_toRightOf="@+id/blue_2"
@@ -116,13 +116,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="2"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/blue_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignLeft="@+id/white_2"
         android:layout_alignStart="@+id/white_2"
         android:layout_below="@+id/black_2"
@@ -130,13 +130,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="2"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/black_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/blue_8"
         android:layout_toEndOf="@+id/blue_2"
         android:layout_toRightOf="@+id/blue_2"
@@ -144,13 +144,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="2"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/white_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/animal_medium"
         android:layout_toEndOf="@+id/animal_medium"
         android:layout_toRightOf="@+id/animal_medium"
@@ -158,13 +158,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="2"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/pink_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/black_2"
         android:layout_toEndOf="@+id/animal_medium"
         android:layout_toRightOf="@+id/animal_medium"
@@ -172,13 +172,13 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="2"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
     <Button
         android:id="@+id/green_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/pink_2"
         android:layout_toEndOf="@+id/pink_2"
         android:layout_toRightOf="@+id/pink_2"
@@ -186,7 +186,7 @@
         android:clickable="true"
         android:onClick="onClickMedium"
         android:text="2"
-        android:textColor="#FCFF35"
+        android:textColor="#FF00FFD4"
         android:textSize="30dp" />
 
 

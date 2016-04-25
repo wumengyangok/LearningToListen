@@ -275,7 +275,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonLeft"
-                android:layout_alignRight="@+id/imageButtonLeft"
+                android:layout_alignLeft="@+id/imageButtonLeft"
                 android:src="@drawable/check_mark"
                 android:visibility="invisible" />
 
@@ -293,7 +293,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageButtonBoth"
-                android:layout_alignRight="@+id/imageButtonBoth"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/check_mark"
                 android:visibility="invisible" />
 

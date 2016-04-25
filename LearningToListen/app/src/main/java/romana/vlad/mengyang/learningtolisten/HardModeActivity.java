@@ -1,17 +1,10 @@
 package romana.vlad.mengyang.learningtolisten;
 
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Random;
 
 public class HardModeActivity extends AppCompatActivity {
     private HardGame hardMode;
@@ -37,6 +30,7 @@ public class HardModeActivity extends AppCompatActivity {
     // Handle the click
     public void onClickHard(View view) {
         if (hardMode.audioFileMask.isFinished() && hardMode.audioFileTarget.isFinished()) {
+            hardMode.setNullAudioFile();
             String iconName = view.getResources().getResourceName(view.getId());
             Log.e("LAG", iconName);
             iconName = new String(hardMode.getButtonName(iconName));

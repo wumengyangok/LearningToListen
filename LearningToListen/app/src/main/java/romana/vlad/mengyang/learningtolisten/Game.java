@@ -35,7 +35,7 @@ public abstract class Game {
     };
 
     protected int[] SNR = {
-            40, 20, 10, 6, 3, 0, -3, -6, -10, -20, -40
+            20, 16, 12, 8, 4, 0, -4, -8, -12, -16, -20, -24, -28, -32, -36
     };
 
     //Count the trials
@@ -127,7 +127,6 @@ public abstract class Game {
         fileName.append(animalArrayList.get(animal)).append('_').append(colorArray[color]).append('_').append(numberArrayList.get(number)).append("_").append(speakerArrayList.get(speaker).name().toLowerCase());
         Log.e("LAG", fileName.toString());
         audioFileTarget = new AudioFile(context, fileName.toString(), setting.getVoiceFrom(), targetVolume);
-        audioFileTarget.play();
     }
 
     protected void playMask(int animal, int color, int number, int speaker) {
@@ -138,7 +137,6 @@ public abstract class Game {
         maskName.append(animalMask).append('_').append(colorMask).append('_').append(numberArrayList.get(number)).append("_").append(speakerMask);
         Log.e("LAG", maskName.toString());
         audioFileMask = new AudioFile(context, maskName.toString(), Setting.VoiceFrom.BOTH, maskVolume);
-        audioFileMask.play();
         correctAnswer = new String(colorArray[color] + "_" + numberArrayList.get(number));
         delay();
     }
@@ -158,8 +156,10 @@ public abstract class Game {
             @Override
             public void run() {
                 imageView.setImageResource(getResId(animalArrayList.get(animal).toString(), R.drawable.class));
+                audioFileTarget.play();
+                audioFileMask.play();
             }
-        }, 500);
+        }, 1000);
     }
 
     public void decide(String iconName) {
@@ -167,10 +167,10 @@ public abstract class Game {
             Toast.makeText(context, "Right", Toast.LENGTH_SHORT).show();
             grade.addGrade(SNR[difficulty], true);
             difficulty += 1;
-            if (difficulty > 10)
-                difficulty = 10;
+            if (difficulty > 15)
+                difficulty = 15;
             Log.e("LAG", animalArrayList.get(animal).toString() + "_happy");
-            imageView.setImageResource(getResId(animalArrayList.get(animal).toString() + "_happy", R.drawable.class));
+            imageView.setImageResource(getResId("happy", R.drawable.class));
         } else {
             Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
             grade.addGrade(SNR[difficulty], false);
@@ -178,7 +178,7 @@ public abstract class Game {
                 difficulty -= 1;
             }
             Log.e("LAG", animalArrayList.get(animal).toString() + "_sad");
-            imageView.setImageResource(getResId(animalArrayList.get(animal).toString() + "_sad", R.drawable.class));
+            imageView.setImageResource(getResId("sad", R.drawable.class));
         }
         countDown--;
         if (countDown == 0) {
@@ -195,5 +195,10 @@ public abstract class Game {
         intent.putExtra("Setting", setting);
         context.startActivity(intent);
         ((Activity) context).finish();
+    }
+
+    public void setNullAudioFile() {
+        audioFileTarget = new NullAudioFile(null, null, null, 0);
+        audioFileMask = new NullAudioFile(null, null, null, 0);
     }
 }
