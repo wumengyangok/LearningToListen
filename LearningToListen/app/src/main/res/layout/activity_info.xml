@@ -20,13 +20,40 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/content_information"
-        android:id="@+id/information"
         android:layout_below="@+id/title_information"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_alignParentBottom="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/content_information"
+                android:id="@+id/information1"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/client_information"
+                android:id="@+id/information2"
+                android:layout_below="@+id/information1"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/project_information"
+                android:layout_below="@+id/information2"
+                android:id="@+id/information3"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+
+    </ScrollView>
 
 </RelativeLayout>
